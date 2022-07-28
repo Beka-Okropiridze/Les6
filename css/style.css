@@ -1,0 +1,127 @@
+/*header styles*/
+.logo {
+	display: inline-block;
+	margin-right: 80px;
+}
+.navi {
+	display: inline-block;
+}
+.navli {
+	display: inline-block;
+}
+.header-wraper {
+	background-color: lightblue;
+	padding: 30px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 5; 
+	/* zindex imistvis rom headeric da cblockic absolute elementebia da headeri iyos zemodan */
+}
+/*section after header 1time*/
+body {
+	height: 1800px;
+/*	padding-top: 186px;*/
+}
+.seqcia {
+	margin-top: 86px;
+}
+/*icon*/
+.icon {
+	height: 80px;
+	position: fixed;
+	right: 45px;
+	bottom: 35px;
+}
+/*end icon*/
+/*gacentvra elementebis shignit pozicionierba და transition elementebi all-nishnavs yvela komponentze moqmedebs.. komentari positionis qvesh
+ da bolo xazi erti da igive chanaweria*/
+.pblock {
+	width: 400px;
+	height: 400px;
+	background: yellow;
+	position: relative;
+    /*transition-property: all;
+	transition-duration: 0.5s;
+	transition-timing-function: linear;
+	transition-delay: 2s;*/
+	transition: all 0.5s linear 1s;
+}
+.pblock:hover {
+	background: black;
+}
+.cblock {
+	width: 100px;
+	height: 100px;
+	background: red;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%) rotate(45deg);
+}
+/*end*/
+/*hover effect*/
+.cblock:hover {
+	background: green;
+	transform: translate(-50%,-50%) rotate(0deg);
+}
+.text:hover {
+	color: darkred;
+	transform: scale(120%);
+}
+/*.pblock:hover .cblock {
+	background: gray;
+}*/
+  
+
+  /*kframe animacia anu romelic modzraobs aucilebelia position tegi*/
+  @keyframes boxanimation {
+  	0% {transform: translate(-50%,-50%) rotate(0deg);}
+  	30% {transform: translate(-50%,-50%) rotate(60deg);}
+  	70% {transform: translate(-50%,-50%) rotate(120deg);}
+  	100% {transform: translate(-50%,-50%) rotate(180deg);}
+  }
+
+  .mymove{
+  	width: 300px;
+  	height: 300px;
+  	background: black;
+  	position: relative;
+  }
+  .mymovechild {
+  	width: 80px;
+  	height: 80px;
+  	background: orange;
+  	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%,-50%);
+  	animation: boxanimation 5s infinite;
+  }
+  /*car animation*/
+  .car {
+  	width: 260px;
+  	height: 160px;
+  	position: absolute;
+  	animation: caranimation 6s 2;
+  }
+  .animeblock{
+  	position: relative;
+  }
+  /*@keyframes caranimation {
+  	0% {left: 200px;}
+  	25% {left: 400px;}
+  	50% {left: 600px;}
+  	75% {left: 800px;}
+  	100% {left: 1200px;}
+
+  }*/
+/*meore gza transform translateitit, ამ შემთხვევაში აბსოლუტ რელატივი აღარაა საჭირო მაინც იმუშავებს*/
+@keyframes caranimation {
+  	0% {transform: translateX(200px);}
+  	25% {transform: translateX(400px);}
+  	50% {transform: translateX(700px);}
+  	75% {transform: translateX(1200px);}
+  	100% {transform: translateX(1600px);}
+  }
